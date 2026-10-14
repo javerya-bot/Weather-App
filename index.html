@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SkyCast live weather forecast app">
+    <title>SkyCast | Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="background-orb orb-one"></div>
+    <div class="background-orb orb-two"></div>
+
+    <main class="app-container">
+        <header class="app-header">
+            <a class="brand" href="#" aria-label="SkyCast home">
+                <span class="brand-icon">☁</span>
+                <span>SkyCast</span>
+            </a>
+            <span class="live-badge">
+                <span class="live-dot"></span> LIVE WEATHER
+            </span>
+        </header>
+
+        <section class="intro">
+            <p class="eyebrow">YOUR PERSONAL WEATHER STATION</p>
+            <h1>Weather, <span>beautifully.</span></h1>
+            <p class="subtitle">
+                Discover the weather in your favorite city.
+            </p>
+        </section>
+
+        <form id="weatherForm" class="search-box">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input
+                id="cityInput"
+                type="text"
+                placeholder="Search a city, e.g. Lahore"
+                aria-label="Enter city name"
+                autocomplete="off"
+                required
+                maxlength="100"
+            >
+            <button id="searchButton" type="submit">Search <span>→</span></button>
+        </form>
+
+        <p id="message" class="message" role="status" aria-live="polite">
+            Search a city to explore its weather.
+        </p>
+
+        <section id="weatherResult" class="weather-card" hidden>
+            <div class="weather-top">
+                <div>
+                    <p class="section-label">CURRENT WEATHER</p>
+                    <h2 id="cityName">Lahore, Pakistan</h2>
+                    <p id="localDate" class="local-date">Local time</p>
+                </div>
+                <div id="weatherIcon" class="weather-icon"
+                     role="img" aria-label="Weather icon">🌤️</div>
+            </div>
+
+            <div class="temperature-row">
+                <h3 id="temperature">--°</h3>
+                <div class="temperature-info">
+                    <p id="description">Clear sky</p>
+                    <p id="feelsLike">Feels like --°C</p>
+                </div>
+            </div>
+
+            <div class="weather-divider"></div>
+
+            <div class="details-grid">
+                <article class="detail-card">
+                    <div class="detail-icon">💧</div>
+                    <div>
+                        <p>Humidity</p>
+                        <strong id="humidity">--%</strong>
+                    </div>
+                </article>
+
+                <article class="detail-card">
+                    <div class="detail-icon">💨</div>
+                    <div>
+                        <p>Wind speed</p>
+                        <strong id="wind">-- km/h</strong>
+                    </div>
+                </article>
+
+                <article class="detail-card">
+                    <div class="detail-icon">🌡️</div>
+                    <div>
+                        <p>Precipitation</p>
+                        <strong id="precipitation">-- mm</strong>
+                    </div>
+                </article>
+
+                <article class="detail-card">
+                    <div class="detail-icon">☀️</div>
+                    <div>
+                        <p>Daylight</p>
+                        <strong id="daylight">--</strong>
+                    </div>
+                </article>
+            </div>
+
+            <p class="updated-note">
+                Weather data provided by Open-Meteo
+            </p>
+        </section>
+
+        <section class="quick-cities">
+            <p class="section-label">POPULAR CITIES</p>
+            <div class="city-buttons">
+                <button type="button" data-city="Lahore">📍 Lahore</button>
+                <button type="button" data-city="Karachi">📍 Karachi</button>
+                <button type="button" data-city="Islamabad">📍 Islamabad</button>
+                <button type="button" data-city="London">📍 London</button>
+            </div>
+        </section>
+
+        <footer>
+            <p>Made with <span>♥</span> for weather lovers</p>
+            <p>Powered by Open-Meteo</p>
+        </footer>
+    </main>
+</body>
+</html>
